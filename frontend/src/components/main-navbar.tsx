@@ -53,17 +53,17 @@ export default function MainNavbar() {
   ];
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-sm">
+    <nav className="sticky top-0 z-50 shadow-md" style={{ backgroundColor: '#65a30d' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo and Name */}
           <a href="/" className="flex items-center gap-3 cursor-pointer">
             <img 
-              src="/logo-marketly.svg" 
+              src="/logo-marketly-white.svg" 
               alt="Marketly" 
               className="h-8 w-8"
             />
-            <span className="text-2xl font-bold" style={{ color: '#84cc16' }}>Marketly</span>
+            <span className="text-2xl font-bold text-white">Marketly</span>
           </a>
 
           {/* Categories Dropdown */}
@@ -71,7 +71,7 @@ export default function MainNavbar() {
             <button
               onClick={() => setIsCategoryMenuOpen(!isCategoryMenuOpen)}
               onMouseEnter={() => setIsCategoryMenuOpen(true)}
-              className="flex items-center justify-center gap-2 bg-gray-50 border border-gray-300 rounded-lg px-3 py-2 text-sm hover:border-lime-500 transition-colors"
+              className="flex items-center justify-center gap-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg px-3 py-2 text-sm hover:bg-white/30 transition-colors text-white"
             >
               <FiGrid className="w-5 h-5" />
               <FiChevronDown className={`w-4 h-4 transition-transform ${isCategoryMenuOpen ? 'rotate-180' : ''}`} />
@@ -132,40 +132,40 @@ export default function MainNavbar() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search products..."
-                className="w-full bg-gray-50 border border-gray-300 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-lime-500 focus:border-lime-500"
+                className="w-full bg-white/90 backdrop-blur-sm border border-white/30 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:bg-white placeholder:text-gray-500"
               />
-              <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" />
             </div>
           </div>
 
           {/* Navigation Icons */}
           <div className="flex items-center gap-6">
             {/* Orders */}
-            <button className="flex flex-col items-center gap-1 text-gray-600 hover:text-lime-600 transition-colors">
+            <button className="flex flex-col items-center gap-1 text-white hover:text-white/80 transition-colors">
               <FiPackage className="w-5 h-5" />
               <span className="text-xs">Orders</span>
             </button>
 
             {/* Favorites */}
-            <button className="flex flex-col items-center gap-1 text-gray-600 hover:text-lime-600 transition-colors">
+            <button className="flex flex-col items-center gap-1 text-white hover:text-white/80 transition-colors">
               <div className="relative inline-block">
                 <FiHeart className="w-5 h-5" />
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full min-w-[10px] h-4 px-1 flex items-center justify-center font-medium">3</span>
+                <span className="absolute -top-2 -right-2 bg-white text-lime-700 text-xs rounded-full min-w-[10px] h-4 px-1 flex items-center justify-center font-medium">3</span>
               </div>
               <span className="text-xs">Favorites</span>
             </button>
 
             {/* Profile */}
-            <button className="flex flex-col items-center gap-1 text-gray-600 hover:text-lime-600 transition-colors">
+            <button className="flex flex-col items-center gap-1 text-white hover:text-white/80 transition-colors">
               <FiUser className="w-5 h-5" />
               <span className="text-xs">Profile</span>
             </button>
 
             {/* Cart */}
-            <button className="flex flex-col items-center gap-1 text-gray-600 hover:text-lime-600 transition-colors">
+            <button className="flex flex-col items-center gap-1 text-white hover:text-white/80 transition-colors">
               <div className="relative inline-block">
                 <FiShoppingCart className="w-5 h-5" />
-                <span className="absolute -top-2 -right-2 text-white text-xs rounded-full min-w-[10px] h-4 px-1 flex items-center justify-center font-medium" style={{ backgroundColor: '#84cc16' }}>5</span>
+                <span className="absolute -top-2 -right-2 bg-white text-lime-600 text-xs rounded-full min-w-[10px] h-4 px-1 flex items-center justify-center font-medium">5</span>
               </div>
               <span className="text-xs">Cart</span>
             </button>
